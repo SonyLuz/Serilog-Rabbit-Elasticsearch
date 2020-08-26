@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Console.SeriLog": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
