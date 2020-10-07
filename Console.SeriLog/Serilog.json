@@ -1,7 +1,10 @@
 ﻿{
   "Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File", "Serilog.Sinks.RabbitMQ" ],
     "MinimumLevel": {
-      "Default": "Information"
+      "Default": "Information",
+      "Microsoft": "Information",
+      "Microsoft.Hosting.Lifetime": "Information"
     },
     "WriteTo": [
       {
@@ -14,6 +17,37 @@
           "rollingInterval": "Day"
         }
       }
+      //{
+      //  "Name": "RabbitMQ",
+      //  "Args": {
+      //    "configure": [
+      //      {
+      //        "Name": "RabbitMQClientConfiguration",
+      //        "Args": {
+      //          "Username": "rabbitmq",
+      //          "Password": "rabbitmq",
+      //          "Exchange ": "LogEvent",
+      //          "ExchangeType": "fanout",
+      //          "DeliveryMode": "NonDurable",
+      //          "RouteKey": "Logs",
+      //          "Port": 5672
+      //        },
+      //        "Hostnames": [
+      //          "localhost"
+      //        ]
+      //      },
+      //      {
+      //        "Name": "RabbitMQSinkConfiguration",
+      //        "Args": {
+      //          "TextFormatter": "Serilog.Formatting.Json",
+      //          "BatchPostingLimit": 0,
+      //          "RestrictedToMinimumLevel": "Information"
+      //        }
+
+      //      }
+      //    ]
+      //  }
+      //} 
     ]
   }
 }
